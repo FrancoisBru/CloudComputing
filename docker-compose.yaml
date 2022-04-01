@@ -1,0 +1,22 @@
+version: "3.9"  # optional since v1.27.0
+services:
+    frontend:
+        image: frontend
+        container_name: frontend
+        build:
+            context:  /Users/brunetfrancois/Documents/CloudComputing/project-1-individual-FrancoisBru-master/src/frontend
+            dockerfile: /Users/brunetfrancois/Documents/CloudComputing/project-1-individual-FrancoisBru-master/deployment/frontend/Dockerfile
+
+        ports:
+            - "8080:8080"
+    backend:
+        image: backend
+        container_name: backend
+        build: 
+            context: /Users/brunetfrancois/Documents/CloudComputing/project-1-individual-FrancoisBru-master/src/backend #on pointe sur l'app
+            dockerfile: /Users/brunetfrancois/Documents/CloudComputing/project-1-individual-FrancoisBru-master/deployment/backend/Dockerfile
+            #on pointe sur le fichier docker
+        ports:
+            - "8081:8081"
+
+    
